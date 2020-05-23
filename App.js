@@ -11,13 +11,15 @@ import {StyleSheet, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import MyDrawer from './src/Route/Router';
+import Router from './src/router/Routers';
 import createSagaMiddleware from 'redux-saga';
 import {persistStore} from 'redux-persist';
 import rootReducer from './src/store/reducers';
 import {createStore, applyMiddleware} from 'redux';
 import saga from './src/store/sagas';
 import {Provider} from 'react-redux';
+import Home from './src/components/Home/Home.screens';
+import CountryDaily from './src/components/CountryDaily/CountryDaily.screens';
 import {PersistGate} from 'redux-persist/integration/react';
 
 const Stack = createStackNavigator();
@@ -31,14 +33,10 @@ const App = () => {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Drawer" headerMode="none">
-            <Stack.Screen name="Drawer" component={MyDrawer} />
+          <Stack.Navigator initialRouteName="Router" headerMode="none">
+            <Stack.Screen name="Router" component={Router} />
             <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Details" component={Detail} />
-            <Stack.Screen name="Dish" component={Dish} />
-            <Stack.Screen name="Ingredients" component={Ingredients} />
-            <Stack.Screen name="Type" component={Type} />
-            <Stack.Screen name="DetectImage" component={DetectImage} />
+            <Stack.Screen name="CountryDaily" component={CountryDaily} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>
