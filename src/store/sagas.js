@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 
-import HomeSaga from '../components/Home/Home.sagas';
+import HomeSaga from '../screens/Home/Home.sagas';
 
 
 export default function* rootSaga() {

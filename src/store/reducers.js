@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 
-import HomeReducer from '../components/Home/home.reducers';
+import HomeReducer from '../screens/Home/home.reducers';
 
 const reducers = combineReducers({
     HomeReducer,

@@ -12,7 +12,7 @@ const ApplicationStyle = StyleSheet.create({
     width: '100%',
     height: Platform.OS === 'android' ? 48 : isIphoneX() ? 88 : 78,
     paddingTop: Platform.OS === 'android' ? 0 : isIphoneX() ? 40 : 30,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.barColor,
     alignItems: 'center',
   },
   viewWrapTitleToolbar: {
@@ -21,7 +21,7 @@ const ApplicationStyle = StyleSheet.create({
     alignItems: 'center',
   },
   titleToolbar: {
-    color: colors.white,
+    color: colors.black,
     fontFamily: fontFamily.bold,
     fontSize: fontSize.large,
   },

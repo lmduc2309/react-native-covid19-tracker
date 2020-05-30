@@ -18,8 +18,8 @@ import rootReducer from './src/store/reducers';
 import {createStore, applyMiddleware} from 'redux';
 import saga from './src/store/sagas';
 import {Provider} from 'react-redux';
-import Home from './src/components/Home/Home.screens';
-import CountryDaily from './src/components/CountryDaily/CountryDaily.screens';
+import Home from './src/screens/Home/Home.screens';
+import CountryDaily from './src/screens/CountryDaily/CountryDaily.screens';
 import {PersistGate} from 'redux-persist/integration/react';
 
 const Stack = createStackNavigator();

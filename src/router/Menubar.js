@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {
   StatusBar,
@@ -12,28 +12,43 @@ import {
 import colors from '../Themes/Colors';
 import {barStyle, fontFamily, fontSize} from '../Themes/Styleconstants';
 import ApplicationStyle from '../Themes/ApplicationStyle';
-
+import Entypo from 'react-native-vector-icons/Entypo';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import ModalDropdown from '../components/ModalDropdown';
+Entypo.loadFont();
+Fontisto.loadFont();
 const Menubar = props => {
   const navigation = useNavigation();
+  const options =[
+    'en', 'vi'
+  ]
   return (
     <View style={styles.toolbar}>
       <StatusBar
         hidden={false}
-        backgroundColor={colors.primary}
+        backgroundColor={colors.white}
         barStyle={barStyle.lightContent}
       />
       <TouchableOpacity
         style={styles.viewWrapIcLeft}
         onPress={() => navigation.openDrawer()}>
-        <Image
-          source={require('../../assets/menu.png')}
-          style={{tintColor: '#fff'}}
-        />
+        <Entypo name="menu" size={30} color="#010101"/>
       </TouchableOpacity>
       <View style={styles.viewWrapTitleToolbar}>
         <Text style={styles.titleToolbar}>{props.name}</Text>
       </View>
-      <View style={styles.viewWrapIcRight} />
+      
+      {/* <View style={styles.viewWrapIcRight} /> */}
+      {/* <TouchableOpacity
+      style={styles.viewWrapIcRight}
+      >
+      <Fontisto name="world-o" size={24} color="#010101"/>
+      </TouchableOpacity> */}
+      
+      <View style={styles.viewWrapIcRight}>
+      <ModalDropdown defaultValue='en' options={options} 
+      />
+    </View>
     </View>
   );
 };
